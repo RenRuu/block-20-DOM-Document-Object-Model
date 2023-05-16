@@ -9,21 +9,30 @@ const users = [
     { name: "Robert", age: 72, occupation: "driver" },
 ];
 
-function main() {
-    const root = document.getElementById("root");
-    const h1 = document.createElement("h1");
-    h1.innerText = "FREELANCERS";
-    root.appendChild(h1);
+const root = document.getElementById("root");
+const h1 = document.createElement("h1");
+h1.innerText = "FREELANCERS"
+root.appendChild(h1);
 
+const cont = document.getElementsByName ('users');
+
+const ul = document.createElement('ul');
+
+for (i = 0; i <= users.length - 1; i++) {
+    const li = document.createElement('li');
+    li.innerHTML = users[i];
+    li.setAttribute('style', 'display: block;');
+    ul.appendChild(li);
 }
 
-//call the main function
-main();
 
-function createH1(title) {
-    const h1 = document.createElement("h1");
-    const root = document.getElementById("root");
-    h1.innerText = "FREELANCERS";
-    return h1;
-}
 
+
+
+
+// function main() {
+
+// }
+
+// //call the main function
+// main();
