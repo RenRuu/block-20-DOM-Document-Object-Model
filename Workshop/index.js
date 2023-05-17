@@ -14,7 +14,25 @@ const h1 = document.createElement("h1");
 h1.innerText = "FREELANCERS"
 root.appendChild(h1);
 
-const cont = document.getElementsByName ('users');
+
+const filteredUsers = users.filter(user => {
+    return user.age <= 100;
+});
+
+console.log(filteredUsers);
+
+
+
+
+/*
+function main() {
+
+}
+
+//call the main function
+main();
+
+
 
 const ul = document.createElement('ul');
 
@@ -25,14 +43,15 @@ for (i = 0; i <= users.length - 1; i++) {
     ul.appendChild(li);
 }
 
+cont.appendChild(ul);
 
 
 
 
+for (let user of users) {
+    console.log(user);
+}
 
-// function main() {
 
-// }
 
-// //call the main function
-// main();
+*/
