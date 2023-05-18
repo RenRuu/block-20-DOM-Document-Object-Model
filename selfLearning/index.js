@@ -40,8 +40,6 @@ get length: ƒ length()
 // */
 
 
-const para = document.querySelector('p');
-
 //console.log(para.innerText);
 
 // putting 'para.' causes it to be a property and not a method 
@@ -49,4 +47,22 @@ const para = document.querySelector('p');
 
 //para.innerText += ' ninjas are awesome!';
 
-para.innerText = 'ninjas are awesome!';
+// para.innerText = 'ninjas are awesome!';
+
+// paras.forEach( para => {
+//      console.log(para.innerText);
+//      para. innerText += ' new text';
+// });
+
+// console.log(content.innerHTML);
+// content.innerHTML = '<h2>THIS IS A NEW  H2 </h2>';
+
+const para = document.querySelector('p');
+const paras = document.querySelectorAll('p');
+const content = document.querySelector('.content');
+
+const people = ['mario', 'luigi', 'yoshi'];
+
+people.forEach(person => {
+     content.innerHTML += `<p>${person} </p>`;
+});
