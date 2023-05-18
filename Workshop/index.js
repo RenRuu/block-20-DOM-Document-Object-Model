@@ -1,3 +1,4 @@
+// Array of users 
 const users = [
     { name: "John", age: 25, occupation: "gardener" },
     { name: "Lenny", age: 51, occupation: "programmer" },
@@ -9,49 +10,33 @@ const users = [
     { name: "Robert", age: 72, occupation: "driver" },
 ];
 
+// Making connection to class 'root' within HTML over to JS and associating to variable 'root'
+// linked to the DIV element node within the <body>
 const root = document.getElementById("root");
+// Connection to 'root' allows the ability to create a new element node 'h1' within the <div> element node
 const h1 = document.createElement("h1");
-h1.innerText = "FREELANCERS"
-root.appendChild(h1);
+// Creating text node within the newly create element node
+        h1.innerText = "FREELANCERS"
+// Establishes newly created
+        root.appendChild(h1);
 
+// Creates 'ul' element node within 'root'
+const unorderedList = document.createElement("ul")
+// Establish content
+        unorderedList.innerText = "Users:" 
+// prints list in console
+        console.log("ul:", unorderedList.innerText)
 
-const filteredUsers = users.filter(user => {
-    return user.age <= 100;
-});
+// forEach loop to list out the names in the array into an li nodes 
+    users.forEach((element) =>{
+        console.log("name:", element.name)
 
-console.log(filteredUsers);
+// Creating 'li' element node within the 'ul' element
+const li = document.createElement("li");
+        li.innerText = element.name; 
+        li.setAttribute('style', 'display: block;');
+        unorderedList.appendChild(li)
+    })
 
-
-
-
-/*
-function main() {
-
-}
-
-//call the main function
-main();
-
-
-
-const ul = document.createElement('ul');
-
-for (i = 0; i <= users.length - 1; i++) {
-    const li = document.createElement('li');
-    li.innerHTML = users[i];
-    li.setAttribute('style', 'display: block;');
-    ul.appendChild(li);
-}
-
-cont.appendChild(ul);
-
-
-
-
-for (let user of users) {
-    console.log(user);
-}
-
-
-
-*/
+        root.appendChild(unorderedList)
+//Fin
