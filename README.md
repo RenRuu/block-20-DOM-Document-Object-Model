@@ -63,9 +63,78 @@ FROM VIDEO SESSION:
  - How to change the name = h1.innerHTML or h1.innerText = "Tyler"
 
 
+Further notes after watching: https://www.youtube.com/watch?v=wKBu_dEaF9E
 
+DOM = Document Object Model
 
+HTML = root node
+Head, body, title, h1, div = element nodes
+Content within “Element nodes” = text nodes 
 
+BASED ON CSS SELECTORS
+
+**Reads top to bottom on HTML doc**
+	- if there are multiple same class designations can specify further in your (‘’) section.
+	- EX)
+		 const para = document.querySelector(‘.error’);
+		 const para = document.querySelector(‘.div.error’);
+	- can copy the selector path through the browser inspect tool
+		highlight section in question > copy > copy by selector = paste into js file 
+		EX) result: “body > div > p:nth-child(1)”
+
+1st step is the action of reaching in and selecting elements = “Querying the Dom” 
+2nd step is the part we actually do something with that element like change it’s content.
+
+EX) 
+const para = document.querySelector(‘p’);. 
+^ assigning variable to select from the html aka making a connection or “Querying the Dom” 
+
+console.log(para); 
+^ uses the created variable (connection) to display data within the HTML doc
+
+Expected output in console: <p>hello, world</p>
+
+To select a single element = document.querySelector(‘p’);
+To select multiple element nodes in the query search = document.querySelectorAll (‘p’);
+	Makes a node list if there are repeating element nodes like multiple ‘p’ sections 
+	Can look like an array but is actually called ‘node list’
+	Can specify exact node within node list by the following ex)
+		const para = document.querySelectorAll('p');
+			^query is selecting all p text nodes 
+		console.log(para[0]);
+			^’[0]’ can select the exact p element by inputting the number placement in the order.
+
+Using the loop type ‘forEach’ you can have the console print all p element nodes.
+		EX)	para.forEach(para => {
+     				console.log(para);
+			});
+		Expected print in console: displays all p element nodes in order.
+
+(Replicating video)
+- get an element by ID 
+	const title = document.getElementById('page-title');
+	console.log(title);
+		expected print: <h1 id="page-title"> Hello </h1>
+
+- get elements by their calls name 
+	const errors = document.getElementsByClassName('errors');
+	console.log(errors);
+		expected print creates a "HTMLCollection" and prints the following:
+			HTMLCollection []
+			length: 0
+			[[Prototype]]: HTMLCollection
+			item: ƒ item()
+			length: (...)
+			namedItem: ƒ namedItem()
+			constructor: ƒ HTMLCollection()
+			Symbol(Symbol.iterator): ƒ values()
+			Symbol(Symbol.toStringTag): "HTMLCollection"
+			get length: ƒ length()
+			[[Prototype]]: Object
+
+Similar to the “Node list” but not identical, like a node list we can still use ‘[ ]’ square bracket notation to get a single element from that list or collection. However, ‘forEach’ loop is not functional from a collection.
+
+- get elements by their tag name
 
 
 
