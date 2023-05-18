@@ -29,13 +29,28 @@ const unorderedList = document.createElement("ul")
 
 // forEach loop to list out the names in the array into an li nodes 
     users.forEach((element) =>{
-        console.log("name:", element.name)
+        console.log("name:", element.name);
+        console.log("age: ", element.age);
+        console.log("occupation: ", element.occupation);
 
 // Creating 'li' element node within the 'ul' element
 const li = document.createElement("li");
         li.innerText = element.name; 
         li.setAttribute('style', 'display: block;');
+
+const liage = document.createElement("li");
+        liage.innerText = element.age;
+        liage.setAttribute('style', 'display: block;');
+
+
+const liocc = document.createElement("li");
+        liocc.innerText = element.occupation;
+        liocc.setAttribute('style', 'display: block;');
+
+        
         unorderedList.appendChild(li)
+        unorderedList.appendChild(liage)
+        unorderedList.appendChild(liocc)
     })
 
         root.appendChild(unorderedList)
